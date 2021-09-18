@@ -29,9 +29,6 @@ class Menu extends Component {
         <div className="menu-body">
           <h3>Welcome!</h3>
           <p>
-            OFCjs lets you plan <a href="https://en.wikipedia.org/wiki/Open-face_Chinese_poker">open-face Chinese poker</a> online.
-          </p>
-          <p>
             Please enter your name and press "Start Game" to begin looking for an
             opponent.
           </p>
@@ -53,11 +50,6 @@ class Menu extends Component {
             </div>
           </form>
         </div>
-        <footer>
-          <div>© 2019–2020 Copyright: <a href="https://trifunovski.me/">Darko Trifunovski</a></div>
-          <div>source code: <a href="https://github.com/dtrifuno/ofcjs">github.com/dtrifuno/ofcjs</a>
-          </div>
-        </footer>
       </div>
     );
   }
