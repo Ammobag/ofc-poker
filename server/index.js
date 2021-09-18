@@ -91,10 +91,12 @@ class GameHandler {
    * @param {object} data - Message content.
    */
   handleJoin(socket, data) {
-    logger.info(`Handling join from ${socket.id}.`)
+    logger.info(`Handling join from ${socket.id}.`);
     // is game waiting for another player?
     if (this.status !== "wait") {
-      logger.error(`${socket.id} attempted to join a game already in progress.`)
+      logger.error(
+        `${socket.id} attempted to join a game already in progress.`
+      );
       this.terminate(
         socket,
         "You are attempting to join a game that is already in progress."
@@ -157,7 +159,7 @@ class GameHandler {
 
   handleRoundEnd() {
     const table = scorer.scoreGame(this.player1, this.player2);
-    logger.info(`Handling a round end for ${this.gameIdD}`)
+    logger.info(`Handling a round end for ${this.gameIdD}`);
 
     this.player1.socket.emit("reply", {
       msg: "roundEnd",
@@ -326,7 +328,7 @@ var express = require("express");
 var app = express();
 var server = require("http").Server(app);
 
-server.listen(process.env.OFCJS_PORT || 3001);
+server.listen(process.env.PORT || 3001);
 
 var io = require("socket.io")(server);
 
